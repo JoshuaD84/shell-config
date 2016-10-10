@@ -1,0 +1,7 @@
+.gitconfig
+.zsh/cache/*
+.zsh/cache/history
+.vim/viminfo
+.ssh
+.ssh/*
+
