@@ -180,7 +180,8 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 set clipboard=unnamed
 
 " make wrapped lines indent properly, but only if we're on a new enough version of vim
-if v:version >= 704
+" if v:version >= 704
+if has ( "patch-7.4.354" )
 	set breakindent
 endif
 
