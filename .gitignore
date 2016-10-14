@@ -1,7 +1,9 @@
 .gitconfig
+.pass
 .zsh/cache/*
 .zsh/cache/history
 .vim/viminfo
+.vim/.netrwhist
 .ssh
 .ssh/*
 
