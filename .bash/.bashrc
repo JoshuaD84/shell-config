@@ -6,6 +6,11 @@ export JAVA_HOME=/usr/local/jdk
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/classes.zip
 export PATH="$PATH:/usr/local/bin:/usr/X11R6/bin"
+export EDITOR=vim
+export PAGER=less
+export LESS="-R"
+export LANG="en_US.UTF-8"
+export WORDCHARS=''
 
 backup="dharaweb@backup1.server.dhamma.org"
 
