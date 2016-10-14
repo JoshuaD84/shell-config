@@ -99,7 +99,8 @@ set timeoutlen=500
 " Enable syntax, setup our theme, set background, and other visual niceties
 " our theme doesn't have a good cursorline setting, so we hard code one. TODO: "todo" doesn't highlight right
 syntax enable
-colorscheme desert256
+" colorscheme desert256
+colorscheme ron
 set background=dark
 hi CursorLine ctermbg=237 cterm=NONE
 
