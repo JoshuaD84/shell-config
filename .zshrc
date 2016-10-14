@@ -18,7 +18,7 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
    export PAGER=less                           # Set default pager
    export LESS="-R"                            # Set the default options for less 
    export LANG="en_US.UTF-8"                   # I'm not sure who looks at this, but I know it's good to set in general
-   export PASSWORD_STORE_DIR="~/.config/.pass"  # Set the location of the encrypted password store for 'pass'
+   export PASSWORD_STORE_DIR=".config/.pass"  # Set the location of the encrypted password store for 'pass'
    export PASSWORD_STORE_CLIP_TIME=30          # Set how long a password clipped to the clipboard with 'pass' lasts
    
 # Misc
