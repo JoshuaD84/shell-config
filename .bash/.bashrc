@@ -59,6 +59,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias less='less -R'
 # The 'ls' family (this assumes you use the GNU ls)
 alias la='ls -Al'               # show hidden files
+alias ll='ls -l'
 alias ls='ls -hF --color'	# add colors for filetype recognition
 alias lx='ls -lXB'              # sort by extension
 alias lk='ls -lSr'              # sort by size

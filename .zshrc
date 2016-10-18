@@ -92,9 +92,9 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
    alias -g ........='../../../../../../..'
    
    alias ls="ls -h --color='auto'"
-   alias lsa='ls -a'
+   alias lsa='ls -A'
    alias ll='ls -l'
-   alias la='ls -la'
+   alias la='ls -lA'
    alias cdl=changeDirectory; function changeDirectory { cd $1 ; la }
 
    alias md='mkdir -p'
