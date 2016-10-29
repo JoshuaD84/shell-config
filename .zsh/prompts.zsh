@@ -28,7 +28,6 @@ if [[ "$TERM" != "dumb" ]]; then
   
   local git_icon=""
   local split="$FX[no-bold]$FX[bold]"
-  #local split="$FX[no-bold] $FX[bold]"
   local spad=" "  
   local indicator="$split"
 
@@ -46,12 +45,11 @@ setopt prompt_subst                                  #make sure we get color sub
 
 
 #first setup the main prompt. This can get a little tricky..
-#All this fancy stuff is just to get rid of an extra newline when you first open a prompt window
 local line_one='$return_status'
 local line_two='$FX[bold]$fg_text$bg_name$spad%n$spad$fg_name$bg_comp$split$fg_text$spad@%m$spad$fg_comp$bg_dir$split$fg_text$spad%~$spad$fg_dir$(git_status)$bg_bar$split%E'
 local line_three='$reset$bg_prompt$spad$reset$fg_prompt$indicator$reset '
 
-
+#All this fancy stuff is just to get rid of an extra newline when you first open a prompt window
 autoload -U add-zsh-hook  # We need this for the hooks we call later on
 add-zsh-hook precmd updatePrompt
 add-zsh-hook preexec checkForClears
