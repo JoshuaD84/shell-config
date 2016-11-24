@@ -2,6 +2,9 @@
 
 " TODO: ruler not working
 
+" Load pathogen to manage plugins
+execute pathogen#infect()
+
 " load my custom functions. I keep them in a separate file because they're messy and long
 source ~/.vim/my-functions.vim
 

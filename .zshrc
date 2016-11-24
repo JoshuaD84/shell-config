@@ -18,7 +18,7 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
    export PAGER=less                           # Set default pager
    export LESS="-R"                            # Set the default options for less 
    export LANG="en_US.UTF-8"                   # I'm not sure who looks at this, but I know it's good to set in general
-   export PASSWORD_STORE_DIR=".config/.pass"   # Set the location of the encrypted password store for 'pass'
+   export PASSWORD_STORE_DIR=".pass"           # Set the location of the encrypted password store for 'pass'
    export PASSWORD_STORE_CLIP_TIME=30          # Set how long a password clipped to the clipboard with 'pass' lasts
    export LESSHISTFILE="/dev/null"                    # Prevent the less hist file from being made, I don't want it
    
@@ -65,7 +65,7 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
    #the auto complete dump is a cache file where ZSH stores its auto complete data, for faster load times
    local ZSH_COMPDUMP="$ZSH_CACHE/acdump-${SHORT_HOST}-${ZSH_VERSION}"  #where to store autocomplete data
 
-   autoload -U compinit                                    # Autoload auto completion
+   autoload -Uz compinit
    compinit -i -d "${ZSH_COMPDUMP}"                        # Init auto completion; tell where to store autocomplete dump
    zstyle ':completion:*' menu select                      # Have the menu highlight as we cycle through options
    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'     # Case-insensitive (uppercase from lowercase) completion
@@ -83,6 +83,8 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
    
 # Aliases
    git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" 
+
+   alias vi="vim"
 
    alias -g ...='../..'
    alias -g ....='../../..'
