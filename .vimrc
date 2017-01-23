@@ -24,6 +24,9 @@ set ruler
 " Height of the command bar, we like two so there's a line dedicated to mode
 set cmdheight=2
 
+" Width of a text line, for use with the gq command, and probably some others
+set textwidth=120
+
 " Always show the status line
 set laststatus=2
 
@@ -48,6 +51,7 @@ set wildignore=*.o,*~,*.pyc,*.exe,*.dll,*.jar,*.zip,*.tar.gz,*.tar,*.bz2
 " A buffer becomes hidden when it is abandoned
 " TODO: I don't know what buffers are
 " set hid
+
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -82,6 +86,12 @@ set autoindent
 " make special regex chars work, and disable with \. example: $ is eol, \$ is $
 set magic
 
+" Only do manual folding
+set foldmethod=manual
+
+" Make sure there are no folds closed by default when opening a buffer
+set foldlevelstart=99
+
 " disable parenthesis match highlighting
 let loaded_matchparen = 1
 
@@ -105,6 +115,11 @@ syntax enable
 " colorscheme desert256
 colorscheme ron
 set background=dark
+"
+" Show a different color past 100 columns
+let &colorcolumn=join(range(121,999),",")
+highlight ColorColumn ctermbg=234 guibg=#2c2d27
+
 hi CursorLine ctermbg=237 cterm=NONE
 
 "Show cursorline when we're in insert mode
@@ -181,7 +196,10 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
    endfunction
 
 " make it default to using the system clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
+" Someone told me this is better, I don't understand why but it's longer so ok
+set clipboard=unnamedplus,autoselect,exclude:cons\\\\|linux
+
 
 " make wrapped lines indent properly, but only if we're on a new enough version of vim
 " if v:version >= 704
@@ -277,3 +295,4 @@ function! Redraw()
     redraw
     return ''
 endfunction
+
