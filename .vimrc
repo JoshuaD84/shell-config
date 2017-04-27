@@ -117,8 +117,8 @@ colorscheme ron
 set background=dark
 "
 " Show a different color past 100 columns
-let &colorcolumn=join(range(121,999),",")
-highlight ColorColumn ctermbg=234 guibg=#2c2d27
+" let &colorcolumn=join(range(121,999),",")
+" highlight ColorColumn ctermbg=234 guibg=#2c2d27
 
 hi CursorLine ctermbg=237 cterm=NONE
 
