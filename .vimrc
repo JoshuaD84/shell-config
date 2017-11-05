@@ -105,9 +105,11 @@ let loaded_matchparen = 1
 " How long to wait for character input for commands
 set timeoutlen=500                          
 
-" Setup mouse. We need to put this in some kind of if
-" set ttymouse=xterm2
-" set mouse=a
+" Setup mouse if it is supported
+if has ('mouse')
+   set ttymouse=xterm2
+   set mouse=a
+endif
 
 " Enable syntax, setup our theme, set background, and other visual niceties
 " our theme doesn't have a good cursorline setting, so we hard code one. TODO: "todo" doesn't highlight right
