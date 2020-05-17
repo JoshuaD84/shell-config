@@ -20,6 +20,7 @@ if [[ "$TERM" != "dumb" ]]; then
   local bar=240;        local fg_bar="$FG[$bar]";        local bg_bar="$BG[$bar]"
   local jobs=117;       local fg_jobs="$FG[$jobs]";      local bg_jobs="$BG[$jobs]"
   local clock=249;      local fg_clock="$FG[$clock]";    local bg_clock="$BG[$clock]"
+  local root=124;       local fg_root="$FG[$root]";      local bg_root="$BG[$root]"
     
   local prompt=166
   local prompt_root=124
@@ -37,7 +38,7 @@ setopt prompt_subst                                  #make sure we get color sub
 #first setup the main prompt. This can get a little tricky..
 local line_one='$return_status'
 local line_two='$FX[bold]$fg_name%n $fg_comp@%m $fg_dir%~$fg_dir$(git_status)$reset'
-local line_three='$FX[bold]$fg_name%(!.#.\$) $reset'
+local line_three='$FX[bold]%(!.$fg_root#.$fg_name\$) $reset'
 
 #All this fancy stuff is just to get rid of an extra newline when you first open a prompt window
 autoload -U add-zsh-hook  # We need this for the hooks we call later on
