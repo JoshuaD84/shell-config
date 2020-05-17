@@ -37,7 +37,7 @@ setopt prompt_subst                                  #make sure we get color sub
 
 #first setup the main prompt. This can get a little tricky..
 local line_one='$return_status'
-local line_two='$FX[bold]$fg_name%n $fg_comp@%m $fg_dir%~$fg_dir$(git_status)$reset'
+local line_two='$FX[bold]%(!.$fg_root.$fg_name)%n $fg_comp@%m $fg_dir%~$fg_dir$(git_status)$reset'
 local line_three='$FX[bold]%(!.$fg_root#.$fg_name\$) $reset'
 
 #All this fancy stuff is just to get rid of an extra newline when you first open a prompt window
