@@ -106,10 +106,10 @@ let loaded_matchparen = 1
 set timeoutlen=500                          
 
 " Setup mouse if it is supported
-if has ('mouse')
-   set ttymouse=xterm2
-   set mouse=a
-endif
+" if has ('mouse')
+"   set ttymouse=xterm2
+"   set mouse=a
+"endif
 
 " Enable syntax, setup our theme, set background, and other visual niceties
 " our theme doesn't have a good cursorline setting, so we hard code one. TODO: "todo" doesn't highlight right
