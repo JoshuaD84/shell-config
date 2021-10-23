@@ -25,7 +25,8 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
 # Misc
    setopt ZLE                                  # Enable the ZLE line editor, which is default behavior, but to be sure
    declare -U path                             # prevent duplicate entries in path
-   eval $(dircolors $ZSH_CONF/dircolors)       # Uses custom colors for LS, as outlined in dircolors
+   DIRCOLORS=$(type -p gdircolors dircolors | head -1 | cut -f1 -d' ')
+   eval $(${DIRCOLORS} $ZSH_CONF/dircolors)       # Uses custom colors for LS, as outlined in dircolors
    umask 002                                   # Default permissions for new files, subract from 777 to understand
    setopt NO_BEEP                              # Disable beeps
    setopt AUTO_CD                              # Sends cd commands without the need for 'cd'
@@ -93,13 +94,14 @@ local LOCAL_ZSHRC=$HOME/.zshlocal/.zshrc       # Allow the local machine to have
    alias -g .......='../../../../../..'
    alias -g ........='../../../../../../..'
    
-   alias ls="ls -h --color='auto'"
-   alias lsa='ls -A'
-   alias ll='ls -l'
-   alias la='ls -lA'
-   alias lx='ls -lXB'    #Sort by extension
-   alias lt='ls -ltr'
-   alias lk='ls -lSr'
+   LS=$(type -p gls ls | head -1 | cut -f1 -d' ')
+   alias ls="${LS} -h --color='auto'"
+   alias lsa="${LS} -A"
+   alias ll="${LS} -l"
+   alias la="${LS} -lA"
+   alias lx="${LS} -lXB"    #Sort by extension
+   alias lt="${LS} -ltr"
+   alias lk="${LS} -lSr"
    alias cdl=changeDirectory; function changeDirectory { cd $1 ; la }
 
    alias md='mkdir -p'
